@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="info-bar">
+        Welcome to 11th Hackademic Challenge! Check out <a href="./description.html">description</a> if you need some help.
+    </div>
+    <div class="form-container">
+        <form method="post" action="./main/">
+            <h2>Please log in:</h2>
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="text" name="password" required>
+            <br>
+            <input type="submit" value="Login">
+            <script>
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                if (urlParams.has('loginFailed')){
+                    const lf = document.createElement("p");
+                    lf.appendChild(document.createTextNode("Login Failed, try again"))
+                    lf.style = "color: red";
+                    document.getElementsByClassName("form-container")[0].childNodes[1].appendChild(lf);
+                }
+            </script>
+        </form>
+        <form method="post" action="./main/">
+            <h2>Or enter ID: </h2>
+            <label for="id">ID number:</label>
+            <input type="text" name="id" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
