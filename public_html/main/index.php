@@ -12,7 +12,7 @@ $password = processString($_POST["password"]);
 
 
 
-$format = "echo \"CREATE TABLE UserCredentials (UserID INTEGER PRIMARY KEY AUTOINCREMENT, Username TEXT NOT NULL UNIQUE, Password TEXT NOT NULL); INSERT INTO UserCredentials (Username, Password) VALUES ('admin', 'Buraki_Z_Ziemniakami!!!123321Enedulejshrghdsjdfhslkdjhfrkuhcjvhgkjliy????'); SELECT Username From UserCredentials WHERE Username = '%s' and Password = '%s';\" | sqlite3";
+$format = "echo \"CREATE TABLE UserCredentials (UserID INTEGER PRIMARY KEY AUTOINCREMENT, Username TEXT NOT NULL UNIQUE, Password TEXT NOT NULL); INSERT INTO UserCredentials (Username, Password) VALUES ('admin', 'Buraki_Z_Ziemniakami!!!123321Enedulejshrghdsjdfhslkdjhfrkuhcjvhgkjliy????'); SELECT Username From UserCredentials WHERE Username = '%s' and Password = '%s';" . PHP_EOL . ";\" | sqlite3";
 
 $sqlRequest = sprintf($format, $username, $password);
 
@@ -20,11 +20,11 @@ $sqlRequest = sprintf($format, $username, $password);
 
 $result = substr(shell_exec($sqlRequest),0,-1);
 
-echo($username);
-echo(":");
-echo($password);
-echo(":   :");
-echo(strcmp($result, "admin"));
+#echo($username);
+#echo(":");
+#echo($password);
+#echo(":   :");
+#echo(strcmp($result, "admin"));
 if (!is_null($result) && "admin"==$result) {
     //Logged in
     ?>
@@ -41,13 +41,7 @@ if (!is_null($result) && "admin"==$result) {
                 Welcome to 11th Hackademic Challenge! Go back to <a href="../index.html">login page</a>.
             </div>
             <div id="description">
-                <h2>Congratulations!</h2>
-                <p>
-                    Secret code: 190
-                </p>
-                <p>
-                    Good luck with others!
-                </p>
+                <iframe src="search_page.php" width="600" height="400" frameborder="0" allowfullscreen></iframe>
             </div>
         </body>
         </html>
