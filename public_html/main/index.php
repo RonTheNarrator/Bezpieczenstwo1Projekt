@@ -41,7 +41,7 @@ if (!is_null($result) && "admin"==$result) {
                 Welcome to 11th Hackademic Challenge! Go back to <a href="../index.html">login page</a>.
             </div>
             <div id="description">
-                <iframe src="search_page.php" width="600" height="400" frameborder="0" allowfullscreen></iframe>
+                <iframe src="search_page.php" width="1000" height="420" frameborder="0" allowfullscreen></iframe>
             </div>
         </body>
         </html>

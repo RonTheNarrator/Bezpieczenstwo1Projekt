@@ -1,1 +1,0 @@
-%'; insert into orders (client_id, product_id, quantity, order_date) VALUES (1,1,1,'2024-01-15');select * from orders where order_date like '%

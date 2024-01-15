@@ -3,20 +3,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authorized Page</title>
+    <link rel="stylesheet" href="style-search.css">
+    <script>
+        function showCongratulationsMessage() {
+            alert("Congratulations, You won!");
+        }
+    </script>
 </head>
 <body>
+    <h2>Orders Details</h2>
     <div id="info-bar">
         <form action="" method="get">
                 <label for="searchQuery">Search:</label>
                 <input type="text" id="searchQuery" name="Search" placeholder="Enter your search term">
                 <button type="submit">Search</button>
-                <button type="submit" name="Reset">Reset Database</button>
+                <button type="submit" name="Reset">Reset</button>
         </form>
     </div>
-    <div>
+    <div class="table">
 
 <?php
-$cookiePatch = "/~babiegun/main/";
+$cookiePatch = "/~apaczek/main/";
 function processString($string){
     $result = str_replace(["\x04", "\x1A"],'',$string);
     $result = str_replace(['.auth', '.backup', '.bail', '.binary ', '.changes', '.clone', '.databases', '.dbinfo', '.dump', '.echo', '.eqp', '.exit', '.explain', '.fullschema', '.headers', '.help', '.import', '.indexes', '.limit', '.load', '.log', '.mode', '.nullvalue', '.once', '.open', '.output', '.print', '.prompt', '.quit', '.read', '.restore', '.save', '.scanstats', '.schema', '.separator', '.shell', '.show', '.stats', '.system', '.tables', '.timeout', '.timer', '.trace', '.vfsinfo', '.vfslist', '.vfsname', '.width'],'',$result);
@@ -73,6 +80,11 @@ $result =  str_replace(["\n","\r"],"</td></tr><tr><td>",$result);
 ?>
         <table>
             <tr>
+                <th>Client Name</th>
+                <th>Product Name</th>
+                <th>Order Date</th>
+            </tr>
+            <tr>
                 <td>
                     <?php
                     print_r($result);
@@ -86,8 +98,8 @@ $testQuery = "echo \"SELECT COUNT(*) FROM orders;\" | sqlite3 '../../databases/%
 $testQuery = sprintf($testQuery, $databaseID);
 $testResult = substr(shell_exec($testQuery),0,-1);
 if ($testResult == "10"){
+    echo '<script>showCongratulationsMessage();</script>';
 ?>
-<h1>Congratulations, You won<h1>
 <?php
 }
 ?>

@@ -1,0 +1,79 @@
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    color: #555;
+    margin-right: 10px;
+}
+
+form {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-right: 10px; 
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    box-sizing: border-box;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+button[name="Reset"] {
+    background-color: #ff4d4d;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button[name="Reset"]:hover {
+    background-color: #a03030;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
